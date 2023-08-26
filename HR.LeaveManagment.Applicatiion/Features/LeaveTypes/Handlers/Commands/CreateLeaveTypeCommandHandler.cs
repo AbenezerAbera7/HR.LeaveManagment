@@ -26,13 +26,12 @@ namespace HR.LeaveManagment.Applicatiion.Features.LeaveTypes.Handlers.Commands
         {
             var validator = new CreateLeaveTypeDtoValidator();
             var validationResult = await validator.ValidateAsync(request.LeaveTypeDto);
-
             if (validationResult.IsValid == false)
+            {
                 throw new Exception();
-
+            }
             var leaveType = _mapper.Map<LeaveType>(request.LeaveTypeDto);
             leaveType = await _leaveTypeRepository.Add(leaveType);
-
             return leaveType.Id;
         }
     }

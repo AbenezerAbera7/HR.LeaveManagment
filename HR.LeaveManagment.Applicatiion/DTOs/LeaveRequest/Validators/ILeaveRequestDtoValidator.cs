@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace HR.LeaveManagment.Applicatiion.DTOs.LeaveRequest.Validators
 {
-    public class ILeaveRequestDtoValidator  : AbstractValidator<ILeaveRequestDto>
+    public class ILeaveTypeDtoValidator  : AbstractValidator<ILeaveRequestDto>
     {
         private readonly ILeaveTypeRepository _leaveTypeRepository;
-        public ILeaveRequestDtoValidator(ILeaveTypeRepository leaveTypeRepository)
+        public ILeaveTypeDtoValidator(ILeaveTypeRepository leaveTypeRepository)
         {
             _leaveTypeRepository = leaveTypeRepository;
 
