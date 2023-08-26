@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using HR.LeaveManagment.Applicatiion.DTOs.LeaveRequest.Validators;
 using HR.LeaveManagment.Applicatiion.DTOs.LeaveType.Validators;
+using HR.LeaveManagment.Applicatiion.Exceptions;
 using HR.LeaveManagment.Applicatiion.Features.LeaveRequests.Requests.Commands;
 using HR.LeaveManagment.Applicatiion.Persistence.Contracts;
 using MediatR;
@@ -29,9 +30,10 @@ namespace HR.LeaveManagment.Applicatiion.Features.LeaveRequests.Handlers.Command
             var validationResult = await validator.ValidateAsync(request.LeaveRequestDto);
 
             if (validationResult.IsValid == false)
-                throw new Exception();
+                throw new ValidationException(validationResult);
 
             var leaveRequest = await _leaveRequestRepository.Get(request.LeaveRequestDto.Id);
+
             if (request.LeaveRequestDto != null)
             {
                 _mapper.Map(request.LeaveRequestDto, leaveRequest);
