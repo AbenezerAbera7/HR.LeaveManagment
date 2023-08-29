@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
+using HR.LeaveManagment.Applicatiion.Contracts.Persistence;
 using HR.LeaveManagment.Applicatiion.Exceptions;
 using HR.LeaveManagment.Applicatiion.Features.LeaveTypes.Requests.Commands;
-using HR.LeaveManagment.Applicatiion.Persistence.Contracts;
 using HR.LeaveManagment.Domain;
 using MediatR;
 using System;

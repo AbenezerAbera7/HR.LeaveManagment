@@ -11,5 +11,6 @@ namespace HR.LeaveManagment.Applicatiion.Features.LeaveAllocations.Requests.Comm
     public class UpdateLeaveAllocationCommand : IRequest<Unit>
     {
         public UpdateLeaveAllocationDto LeaveAllocationDto { get; set; }
+        public LeaveAllocationDto UpdateLeaveAllocationDto { get; set; }
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HR.LeaveManagment.Applicatiion.Persistence.Contracts
+namespace HR.LeaveManagment.Applicatiion.Contracts.Persistence
 {
     public interface ILeaveRequestRepository : IGenericRepository<LeaveRequest>
     {

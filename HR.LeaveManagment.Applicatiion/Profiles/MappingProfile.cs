@@ -28,10 +28,10 @@ namespace HR.LeaveManagment.Applicatiion.Profiles
             #endregion LeaveRequest
 
             #region LeaveAllocation
-            CreateMap<LeaveAllocation, LeaveAllocationDto>().ReverseMap();
-            CreateMap<LeaveAllocation, LeaveAllocationListDto>().ReverseMap();
-            CreateMap<LeaveAllocation, CreateLeaveAllocationDto>().ReverseMap();
-            CreateMap<LeaveAllocation, UpdateLeaveAllocationDto>().ReverseMap();
+            CreateMap<LeaveType, LeaveAllocationDto>().ReverseMap();
+            CreateMap<LeaveType, LeaveAllocationListDto>().ReverseMap();
+            CreateMap<LeaveType, CreateLeaveAllocationDto>().ReverseMap();
+            CreateMap<LeaveType, UpdateLeaveAllocationDto>().ReverseMap();
             #endregion LeaveAllocation
 
         }

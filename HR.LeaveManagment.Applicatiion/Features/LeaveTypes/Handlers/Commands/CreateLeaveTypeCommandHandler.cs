@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using FluentValidation;
+using HR.LeaveManagment.Applicatiion.Contracts.Persistence;
 using HR.LeaveManagment.Applicatiion.DTOs.LeaveType.Validators;
 using HR.LeaveManagment.Applicatiion.Exceptions;
 using HR.LeaveManagment.Applicatiion.Features.LeaveTypes.Requests.Commands;
-using HR.LeaveManagment.Applicatiion.Persistence.Contracts;
 using HR.LeaveManagment.Applicatiion.Responses;
 using HR.LeaveManagment.Domain;
 using MediatR;
