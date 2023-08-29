@@ -2,6 +2,7 @@ using HR.LeaveManagment.Applicatiion;
 using HR.LeaveManagment.Infrastructure;
 using HR.LeaveManagment.Persistence;
 using Microsoft.Extensions.Configuration;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.ConfigureApplicationServices();
@@ -13,7 +14,10 @@ builder.Services.ConfigurePersistenceServices(builder.Configuration);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "HR LeaveManagment Api", Version = "v1" });
+});
 
 builder.Services.AddCors(o =>
 {
@@ -29,9 +33,12 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
+    
+   
 }
+app.UseSwagger();
+app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "HR.LeaveManagment.Api v1"));
 
 app.UseHttpsRedirection();
 
